@@ -25,14 +25,33 @@
     電話<br>
     <?php $tel = $ud->tel; ?>
     <input type="text" name="tel" value="{{ old('tel', $tel) }}"><br><br>
-    
+
     誕生日<br>
     <?php $year = $ud->birth_year; ?>
+    <?php $year_end = date("Y"); ?>
+    <select name="birth_year">
+    @for ($i = 1970; $i <= $year_end; $i++)
+        <option value="{{ $i }}" @if(old('birth_year', $year)==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    年
+    
     <?php $mon = $ud->birth_mon; ?>
+    <select name="birth_mon">
+    @for ($i = 1; $i <= 12; $i++)
+        <option value="{{ $i }}" @if(old('birth_mon', $mon)==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    月
+    
     <?php $day = $ud->birth_day; ?>
-    <input type="text" name="birth_year" value="{{ old('birth_year', $year) }}">年
-    <input type="text" name="birth_mon" value="{{ old('birth_mon', $mon) }}">月
-    <input type="text" name="birth_day" value="{{ old('birth_day', $day) }}">日
+    <select name="birth_day">
+    @for ($i = 1; $i <= 31; $i++)
+        <option value="{{ $i }}" @if(old('birth_day', $day)==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    日
+    
     <br><br>
     
     性別<br>
@@ -45,3 +64,24 @@
     
     <input type='submit' value='送信'>
     </form>
+    
+<?php
+
+function birth_year($year){
+    $start = 1926;
+    $end = 2010;
+    print '<select name="birth_year">';
+    for($i = $start; $i <= $end; $i++){
+        if($i == $year){
+            
+            print "<option value=\"$i\" @if(Input::old('birth_year')==$i selected @endif>$i</option>" ;
+        } else {
+            print "<option value=\"$i\">$i</option>";
+        }
+    }
+    print "</select>";
+    
+    
+}
+
+?>
