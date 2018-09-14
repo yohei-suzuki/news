@@ -2,6 +2,8 @@
         <?php $user = Auth::user(); ?>
         {{ $user->name }} 
         
+        <a href="{{ route('user.index') }}">mypage</a> 
+        
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
@@ -12,4 +14,5 @@
         </form>
 @else
     <a href="{{ route('login') }}">login</a>
+    <a href="{{ route('register') }}">regster</a>
 @endif
