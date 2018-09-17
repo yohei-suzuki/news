@@ -32,6 +32,6 @@ Route::prefix('news')->group(function() {
 });
 
 Route::prefix('search')->group(function() {
-    Route::post('/', 'NewsSearchController@search')->name('news.search');
+    Route::get('/', 'NewsSearchController@search')->name('news.search');
 });
 
