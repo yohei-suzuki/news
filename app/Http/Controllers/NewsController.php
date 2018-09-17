@@ -13,7 +13,8 @@ class NewsController extends Controller
     public function index()
     {
 
-        $news = News::paginate(3);  
+        //$news = News::paginate(3);
+        $news = News::orderby('id', 'desc')->paginate(5);
 
         if( Auth::check() ){
             $user = Auth::user();
