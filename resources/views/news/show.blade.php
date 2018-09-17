@@ -1,4 +1,5 @@
 @include('commons.navbar')
+@include('commons.search')
 <hr>
 
 <h3>{{ $news->title }}</h3>

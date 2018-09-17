@@ -30,3 +30,8 @@ Route::prefix('news')->group(function() {
     Route::get('/', 'NewsController@index')->name('news.index');
     Route::get('/{id}', 'NewsController@show')->name('news.show');
 });
+
+Route::prefix('search')->group(function() {
+    Route::post('/', 'NewsSearchController@search')->name('news.search');
+});
+
