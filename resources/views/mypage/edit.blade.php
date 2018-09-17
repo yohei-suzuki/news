@@ -56,7 +56,9 @@
     
     性別<br>
     <?php $sex = $ud->sex; ?>
-    <input type="text" name="sex" value="{{ old('sex', $sex) }}"><br><br>
+    <input type="radio" name="sex" value="men" @if(old('sex', $sex)=='men') checked  @endif>男性<br>
+    <input type="radio" name="sex" value="woman" @if(old('sex', $sex)=='woman') checked  @endif>女性<br>
+    <br>
     
     職業<br>
     <?php $job = $ud->job; ?>
@@ -65,23 +67,3 @@
     <input type='submit' value='送信'>
     </form>
     
-<?php
-
-function birth_year($year){
-    $start = 1926;
-    $end = 2010;
-    print '<select name="birth_year">';
-    for($i = $start; $i <= $end; $i++){
-        if($i == $year){
-            
-            print "<option value=\"$i\" @if(Input::old('birth_year')==$i selected @endif>$i</option>" ;
-        } else {
-            print "<option value=\"$i\">$i</option>";
-        }
-    }
-    print "</select>";
-    
-    
-}
-
-?>

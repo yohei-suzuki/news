@@ -34,13 +34,33 @@
     <input type="text" name="tel" value="{{ old('tel') }}"><br><br>
     
     誕生日<br>
-    <input type="text" name="birth_year" value="{{ old('birth_year') }}">年
-    <input type="text" name="birth_mon" value="{{ old('birth_mon') }}">月
-    <input type="text" name="birth_day" value="{{ old('birth_day') }}">日
+    <?php $year_end = date("Y"); ?>
+    <select name="birth_year">
+    @for ($i = 1970; $i <= $year_end; $i++)
+        <option value="{{ $i }}" @if(old('birth_year')==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    年
+    
+    <select name="birth_mon">
+    @for ($i = 1; $i <= 12; $i++)
+        <option value="{{ $i }}" @if(old('birth_mon')==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    月
+    
+    <select name="birth_day">
+    @for ($i = 1; $i <= 31; $i++)
+        <option value="{{ $i }}" @if(old('birth_day')==$i) selected  @endif>{{ $i }}</option>
+    @endfor
+    </select>
+    日
     <br><br>
     
     性別<br>
-    <input type="text" name="sex" value="{{ old('sex') }}"><br><br>
+    <input type="radio" name="sex" value="men" @if(old('sex')=='men') checked  @endif>男性<br>
+    <input type="radio" name="sex" value="woman" @if(old('sex')=='woman') checked  @endif>女性<br>
+    <br>
     
     職業<br>
     <input type="text" name="job" value="{{ old('job') }}"><br><br>
