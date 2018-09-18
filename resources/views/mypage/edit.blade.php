@@ -1,8 +1,7 @@
-<h1>mypage index</h1>
+@extends('layouts.app')
+<h1>mypage edit</h1>
 
-@include('commons.navbar')
-
-<hr>
+@section('content')
 @include('commons.error_messages')
     
     <form method="POST" action="{{ route('user.update') }}">
@@ -66,4 +65,4 @@
     
     <input type='submit' value='送信'>
     </form>
-    
+@endsection
