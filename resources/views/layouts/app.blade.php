@@ -13,11 +13,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="http://laravel-mono-list.herokuapp.com/css/style.css">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     
 </head>
 <body>
     @include('commons.navbar')
+    
+    @yield('cover')
     
     @yield('content')
 

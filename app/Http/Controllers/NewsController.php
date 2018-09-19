@@ -14,7 +14,7 @@ class NewsController extends Controller
     {
 
         //$news = News::paginate(3);
-        $news = News::orderby('id', 'desc')->paginate(5);
+        $news = News::orderby('id', 'desc')->paginate(10);
 
         if( Auth::check() ){
             $user = Auth::user();
