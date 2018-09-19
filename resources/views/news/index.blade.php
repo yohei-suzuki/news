@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <h2>ニュースヘッドライン</h2>
     @isset($news)
         <table class="table">
             <th>
@@ -43,6 +43,6 @@
         </table>
     @endisset
     {!! $news->render() !!}
-    </div>
+    
 
 @endsection

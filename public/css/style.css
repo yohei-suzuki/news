@@ -5,6 +5,12 @@ body {
     background: #f2f2f2;
 }
 
+#main h3 {
+    font-size: 16px;
+    border-left: solid 3px #009933;
+    padding: 4px 9px 4px 14px;
+}
+
 footer {
     margin-top: 40px;
 }
@@ -47,4 +53,77 @@ footer {
 .cover .btn-success {
     background-color: #ed486f;
     border-color: #ed486f;
+}
+
+#wrapper {
+    width: 984px;
+    margin: 0 auto;
+}
+
+#main {
+    width: 730px;
+    float: left;
+}
+
+#sidebar {
+    width: 220px;
+    float: right;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+#side_banner ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+#side_banner h2 {
+    background-color: #009933;
+    color: #fff;
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer #footer_navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #009933;
+    text-align: center;
+}
+
+footer #footer_navi {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+}
+
+footer #footer_navi li {
+    display: inline;
+    border-left: solid 1px #333;
+    margin-left: 8px;
+    padding-left: 8px;
+    font-size: smaller;
+}
+
+footer #footer_navi li:last-child {
+  border-right: solid 1px #333;
+  padding: 0 8px;
+}
+
+footer small {
+    display: inline-block;
+    padding: 8px 0;
+    color: #fff;
 }

@@ -8,6 +8,7 @@ use Auth;
 //use Illuminate\Support\Facades\Auth;
 use App\News;
 use App\NewsCategory;
+use App\NewsRepoter;
 
 class NewsController extends Controller
 {
@@ -15,7 +16,7 @@ class NewsController extends Controller
     {
 
         //$news = News::paginate(3);
-        $news = News::orderby('id', 'desc')->paginate(10);
+        $news = News::orderby('id', 'desc')->paginate(20);
         
         $newscategorys = NewsCategory::all();
 
@@ -37,8 +38,15 @@ class NewsController extends Controller
     public function show($id)
     {
         $news = News::find($id);
-        
+        $news_category = NewsCategory::find($news->category_id);
+        $news_repoter = NewsRepoter::find($news->repoter_id);
         //return("news show $id");
-        return view('news.show', ['news' => $news]);
+        return view(
+            'news.show', 
+            [
+                'news' => $news,
+                'news_category' => $news_category,
+                'news_repoter' => $news_repoter,
+                ]);
     }
 }

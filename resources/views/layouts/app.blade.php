@@ -21,10 +21,52 @@
     
     @yield('cover')
 
-    @yield('content')
-
-    <footer>
-        @include('commons.footer')
-    </footer>
+    <!-- wrapper -->
+        <div id="wrapper" class="clearfix">
+            <!-- ここからメイン -->
+            <div id="main">
+                <section id="point">
+                    
+                    <section class="clearfix">
+                        @yield('content')
+                    </section>
+                </section>
+            </div>
+            <!-- ここまでメイン -->
+            <!-- ここからサイド -->
+            <aside id="sidebar">
+                <section id="side_banner">
+                    <h2>お知らせ</h2>
+                    <ul>
+                        <li>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                        </li>
+                    </ul>
+                </section>
+                <section id="side_banner">
+                    <h2>お知らせ</h2>
+                    <ul>
+                        <li>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                            <p>節電ウイークです</p>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+            <!-- ここまでサイド -->
+        </div>
+        <!-- wrapper end -->
+        <!-- ここからフッター -->
+        <footer>
+            @include('commons.footer')
+        </footer>
+        <!-- ここまでフッター -->
 </body>
 </html>

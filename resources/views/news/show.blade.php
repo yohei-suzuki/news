@@ -11,16 +11,17 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    
+        【{{ $news->created_at }}】
         @if (Auth::check())
             {!! $news->content !!}
             <br>
-            {{ $news->cate }} <br>
-            {{ $news->repo }}
+            【記者：{{ $news_repoter->name }}】　
+            【カテゴリ：{{ $news_category->name }}】 
         @else
             <?php $kiji = mb_strimwidth($news->content, 0, 200, "..."); ?>
             <?php echo $kiji; ?>
             ここからは<a href="{{ route('login') }}">login</a>が必要です
         @endif
-    </div>
+    
 @endsection
