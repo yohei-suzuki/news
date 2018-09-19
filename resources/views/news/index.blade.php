@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<h1>news index</h1>
+
 
 @section('content')
 
