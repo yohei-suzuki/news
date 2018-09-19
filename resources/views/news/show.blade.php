@@ -13,6 +13,5 @@
         ここからは<a href="{{ route('login') }}">login</a>が必要です
     @endif
     <hr>
-    <a href="{{ route('news.index') }}">news index</a><br>
     <a href="/">index</a>
 @endsection

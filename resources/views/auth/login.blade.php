@@ -1,5 +1,7 @@
-<a href="{{ route('register') }}">Register</a><br>
-<br>
+@extends('layouts.app')
+
+@section('content')
+login
 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -53,3 +55,4 @@
                             </div>
                         </div>
                     </form>
+@endsection
