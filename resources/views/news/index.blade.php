@@ -29,7 +29,11 @@
                         <a href="{{ route('news.show', ['id' => $d->id]) }}">{{ $d->title }}</a>
                     </td>
                     <td class="test-left">
-                        {{ $d->category_id }}           
+                        @foreach($newscategorys as $newscategory)
+                            @if($d->category_id == $newscategory->id)
+                                {{ $newscategory->name }}
+                            @endif
+                        @endforeach
                     </td>
                     <td class="test-left">
                         {{ $d->created_at }}

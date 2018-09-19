@@ -20,9 +20,11 @@
     @include('commons.navbar')
     
     @yield('cover')
-    
+
     @yield('content')
 
-    @include('commons.footer')
+    <footer>
+        @include('commons.footer')
+    </footer>
 </body>
 </html>

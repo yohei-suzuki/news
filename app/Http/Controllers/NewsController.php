@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 //use Illuminate\Support\Facades\Auth;
 use App\News;
+use App\NewsCategory;
 
 class NewsController extends Controller
 {
@@ -15,12 +16,19 @@ class NewsController extends Controller
 
         //$news = News::paginate(3);
         $news = News::orderby('id', 'desc')->paginate(10);
+        
+        $newscategorys = NewsCategory::all();
 
         if( Auth::check() ){
             $user = Auth::user();
-            return view('news.index', ['news' => $news, 'user' => $user]);
+            return view(
+                'news.index', 
+                ['news' => $news, 
+                 'user' => $user,
+                 'newscategorys' => $newscategorys, 
+                ]);
         } else {
-            return view('news.index', ['news' => $news]);
+            return view('news.index', ['news' => $news, 'newscategorys' => $newscategorys, ]);
         }
         
         //return view('news.index', ['news' => $news, 'user' => $user]);
