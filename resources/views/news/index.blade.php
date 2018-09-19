@@ -13,9 +13,30 @@
 @section('content')
     <div class="container">
     @isset($news)
-        @foreach($news as $d)
-            <a href="{{ route('news.show', ['id' => $d->id]) }}">{{ $d->id }}</a> {{ $d->title }} <br>
-        @endforeach
+        <table class="table">
+            <th>
+                タイトル
+            </th>
+            <th>
+                カテゴリ
+            </th>
+            <th>
+                更新日時
+            </th>
+            @foreach($news as $d)
+                <tr>
+                    <td class="test-left">
+                        <a href="{{ route('news.show', ['id' => $d->id]) }}">{{ $d->title }}</a>
+                    </td>
+                    <td class="test-left">
+                        {{ $d->category_id }}           
+                    </td>
+                    <td class="test-left">
+                        {{ $d->created_at }}
+                    </td>
+                </tr>
+            @endforeach
+        </table>
     @endisset
     {!! $news->render() !!}
     </div>
