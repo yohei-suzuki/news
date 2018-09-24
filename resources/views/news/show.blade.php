@@ -4,20 +4,20 @@
     <div class="cover">
         <div class="cover-inner">
             <div class="cover-contents">
-                <h1>{{ $news->title }}</h1>
+                
             </div>
         </div>
     </div>
 @endsection
 
 @section('content')
-    
-        【{{ $news->created_at }}】
+        <h1>{{ $news->title }}</h1>
         @if (Auth::check())
             {!! $news->content !!}
             <br>
-            【記者：{{ $news_repoter->name }}】　
-            【カテゴリ：{{ $news_category->name }}】 
+            【記者：{{ $news_repoter->name }}】<br>
+            【カテゴリ：{{ $news_category->name }}】<br>
+            【更新：{{ $news->created_at }}】
         @else
             <?php $kiji = mb_strimwidth($news->content, 0, 200, "..."); ?>
             <?php echo $kiji; ?>
